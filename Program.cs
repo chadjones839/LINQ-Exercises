@@ -90,6 +90,36 @@ namespace linq
             {
                 Console.WriteLine(name);
             }
+
+
+
+            // Build a collection of these numbers sorted in ascending order
+            List<int> newNumbers = new List<int>()
+            {
+                15,
+                8,
+                21,
+                24,
+                32,
+                13,
+                30,
+                12,
+                7,
+                54,
+                48,
+                4,
+                49,
+                96
+            };
+
+            List<int> ascend = newNumbers.OrderBy(number => number).ToList();
+
+            Console.WriteLine();
+            Console.WriteLine("NAMES IN DESCENDING ORDER");
+            foreach (int number in ascend)
+            {
+                Console.WriteLine(number);
+            }
         }
     }
 }
