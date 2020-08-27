@@ -8,20 +8,20 @@ namespace linq
     {
         static void Main(string[] args)
         {
-            //RESTRICTION/FILTERING OPERATIONS
+//RESTRICTION/FILTERING OPERATIONS
 
-            // Find the words in the collection that start with the letter 'L'
+// Find the words in the collection that start with the letter 'L'
             List<string> fruits = new List<string>() { "Lemon", "Apple", "Orange", "Lime", "Watermelon", "Loganberry" };
 
             IEnumerable<string> LFruits = from fruit in fruits where fruit.StartsWith("L") select fruit;
 
-            Console.WriteLine("Fruits that start with the letter L");
+            Console.WriteLine(@"""L"" FRUITS");
             foreach (string LFruit in LFruits)
             {
                 Console.WriteLine($"{LFruit}");
             }
 
-            // Which of the following numbers are multiples of 4 or 6
+// Which of the following numbers are multiples of 4 or 6
             List<int> numbers = new List<int>()
             {
                 15,
@@ -46,14 +46,14 @@ namespace linq
             IEnumerable<int> fourSixMultiples = numbers.Where(number => number % 6 == 0 || number % 4 == 0);
 
             Console.WriteLine();
-            Console.WriteLine("Multiples of 4 and 6");
+            Console.WriteLine("MULTIPLES OF 4 AND 6");
 
             foreach (int number in fourSixMultiples)
             {
                 Console.WriteLine(number);
             }
 
-            // Order these student names alphabetically, in descending order (Z to A)
+// Order these student names alphabetically, in descending order (Z to A)
             List<string> names = new List<string>()
             {
                 "Heather",
@@ -91,10 +91,8 @@ namespace linq
                 Console.WriteLine(name);
             }
 
-
-
-            // Build a collection of these numbers sorted in ascending order
-            List<int> newNumbers = new List<int>()
+// Build a collection of these numbers sorted in ascending order
+            List<int> numbers2 = new List<int>()
             {
                 15,
                 8,
@@ -112,14 +110,38 @@ namespace linq
                 96
             };
 
-            List<int> ascend = newNumbers.OrderBy(number => number).ToList();
+            List<int> ascend = numbers2.OrderBy(number => number).ToList();
 
             Console.WriteLine();
-            Console.WriteLine("NAMES IN DESCENDING ORDER");
+            Console.WriteLine("NUMBERS2 IN ASCENDING ORDER");
             foreach (int number in ascend)
             {
                 Console.WriteLine(number);
             }
+
+// Output how many numbers are in this list
+            List<int> numbers3 = new List<int>()
+            {
+                15,
+                8,
+                21,
+                24,
+                32,
+                13,
+                30,
+                12,
+                7,
+                54,
+                48,
+                4,
+                49,
+                96
+            };
+
+            Console.WriteLine();
+            Console.WriteLine($"There are {numbers3.Count} numbers in the moreNumbers List");
+
+
         }
     }
 }
